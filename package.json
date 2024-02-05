@@ -1,0 +1,31 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "headtest": "npm run test -- --headed",
+    "TestNew1": "npm run headtest -- --spec Cypress/integration/examples/TestNew1.js",
+    "fixturesTest": "npm run test -- --spec Cypress/integration/examples/TestNew8FrmeworkFixtures.js",
+    "recordTest": "npm run TestNew1 -- --record --key 736ac75a-6aa7-4788-99c2-d3a40624c5a0"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.6.4",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "esbuild": "^0.19.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": [
+      "cypress/integration/examples/BDD/PPC/PPPStepDef.js"
+    ]
+  },
+  "dependencies": {
+    "cypress-iframe": "^1.0.1"
+  }
+}
